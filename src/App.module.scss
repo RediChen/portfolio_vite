@@ -1,0 +1,42 @@
+@import "./style/";
+
+.fullScreen {
+	width: 100dvw;
+	height: 100dvh;
+}
+
+.panel {
+	@extend .fullScreen;
+	transition: transform 0.4s;
+
+	position: absolute;
+	left: 0;
+}
+
+.panel_1 {
+	padding: 5rem;
+
+	background-color: lightblue;
+	top: 0;
+
+	&.openState {
+		transform: translateY(-100%);
+	}
+}
+
+.panel_2 {
+	background-color: rgb(204, 230, 173);
+	top: 100%;
+
+	&.openState {
+		transform: translateY(-100%);
+	}
+}
+
+.switchBtn {
+	position: absolute;
+	bottom: 2rem;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+}
