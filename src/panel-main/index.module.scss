@@ -1,0 +1,48 @@
+@import "../style/";
+
+.bookmarkWrap {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.bookmark {
+	$w: 4rem;
+	$green: rgb(18, 97, 71);
+
+	padding-inline: 2rem;
+	width: $w;
+	font-size: 2rem;
+	border: none;
+	background-color: wheat;
+	writing-mode: vertical-rl;
+	border-radius: 1rem 0 0 1rem;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		right: 0;
+		bottom: calc(10px - #{$w});
+		border: calc(#{$w} / 2 - 3px) solid transparent;
+		border-top-color: wheat;
+		border-right-color: wheat;
+	}
+
+	&.active {
+		background-color: $green;
+
+		&::after {
+			border-top-color: $green;
+			border-right-color: $green;
+			z-index: 3;
+		}
+	}
+}
+
+.main {
+	flex-grow: 1;
+	min-height: 100%;
+	background-color: darkmagenta;
+}
