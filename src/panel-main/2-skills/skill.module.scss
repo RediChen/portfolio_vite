@@ -1,0 +1,40 @@
+.tile {
+	background-color: #f2f2f2;
+	transition: background-color 0.4s;
+
+	&:hover {
+		background-color: bisque;
+	}
+}
+
+.h2 {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.membrane {
+	padding-top: 0.5rem;
+	height: 100%;
+	margin-inline: auto;
+	width: clamp(6rem, 60%, 100%);
+}
+
+.list {
+	padding: 0;
+
+	.listItem {
+		padding-block: 0.5rem;
+		display: flex;
+		flex-direction: row;
+		align-items: start;
+	}
+
+	.icon {
+		margin-right: 0.5rem;
+		//高度必須配合隔壁文字的 line height
+		height: 1.5rem;
+		font-size: 1.25rem;
+		display: grid;
+		place-items: center;
+	}
+}
