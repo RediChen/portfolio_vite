@@ -15,22 +15,22 @@
 
 .panel_1 {
 	padding: 5rem;
-
 	background-color: lightblue;
 	top: 0;
 
-	&.openState {
-		transform: translateY(-100%);
+	@include rwd-above("lg") {
+		padding: 2rem;
 	}
 }
 
 .panel_2 {
 	background-color: rgb(204, 230, 173);
 	top: 100%;
+}
 
-	&.openState {
-		transform: translateY(-100%);
-	}
+.panel_1.openState,
+.panel_2.openState {
+	transform: translateY(-100%);
 }
 
 .switchBtn {
