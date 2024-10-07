@@ -4,33 +4,43 @@ import Skill from './2-skills/skill';
 
 export default function Panel() {
   const [tabNum, setTabNum] = useState(1);
+  const [hoverNum, setHoverNum] = useState(0);
 
   return (
     <section className="h-100">
       <div className="h-100 d-flex flex-row">
         <div className={s.bookmarkWrap}>
           <button
-            className={['shadow-lg', s.bookmark, tabNum === 1 ? s.active : ''].join(' ')}
-            onClick={() => setTabNum(1)}>
+            className={[s.bookmark, tabNum === 1 ? s.active : ''].join(' ')}
+            onClick={() => setTabNum(1)}
+            onMouseEnter={() => setHoverNum(1)}
+            onMouseLeave={() => setHoverNum(0)}
+          >
             基本
           </button>
           <button
             className={[s.bookmark, tabNum === 2 ? s.active : ''].join(' ')}
-            onClick={() => setTabNum(2)}>
+            onClick={() => setTabNum(2)}
+            onMouseEnter={() => setHoverNum(2)}
+            onMouseLeave={() => setHoverNum(0)}
+          >
             技術棧
           </button>
           <button
             className={[s.bookmark, tabNum === 3 ? s.active : ''].join(' ')}
-            onClick={() => setTabNum(3)}>
+            onClick={() => setTabNum(3)}
+            onMouseEnter={() => setHoverNum(3)}
+            onMouseLeave={() => setHoverNum(0)}
+          >
             學經歷
           </button>
         </div>
-        <div className={s.main}>
+        <div className={[s.main, hoverNum === tabNum ? s.active : ''].join(' ')}>
           {tabNum === 1 && (
             <article>11111</article>
           )}
           {tabNum === 2 && (
-            <Skill />
+            <Skill hoverNum={hoverNum} />
           )}
           {tabNum === 3 && (
             <article>33333</article>

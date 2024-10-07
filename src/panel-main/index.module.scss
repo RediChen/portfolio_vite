@@ -1,4 +1,5 @@
 @import "../style/";
+@import "./color.scss";
 
 .bookmarkWrap {
 	display: flex;
@@ -7,15 +8,15 @@
 }
 .bookmark {
 	$w: 4rem;
-	$green: rgb(18, 97, 71);
 
-	padding-inline: 2rem;
+	padding-inline: 2.5rem 2rem;
 	width: $w;
 	font-size: 2rem;
 	border: none;
-	background-color: wheat;
+	background-color: $normal;
 	writing-mode: vertical-rl;
-	border-radius: 1rem 0 0 1rem;
+	border-radius: 1rem 0 0 1.25rem;
+	transition: background-color 0.4s;
 	position: relative;
 
 	&::after {
@@ -24,19 +25,36 @@
 		width: 0;
 		height: 0;
 		right: 0;
-		bottom: calc(10px - #{$w});
+		bottom: calc(12px - #{$w});
 		border: calc(#{$w} / 2 - 3px) solid transparent;
-		border-top-color: wheat;
-		border-right-color: wheat;
+		border-top-color: $normal;
+		border-right-color: $normal;
+		transition: border-color 0.4s;
+	}
+
+	&:hover {
+		background-color: $normal-hover;
+		&::after {
+			border-top-color: $normal-hover;
+			border-right-color: $normal-hover;
+		}
 	}
 
 	&.active {
-		background-color: $green;
+		background-color: $active;
 
 		&::after {
-			border-top-color: $green;
-			border-right-color: $green;
+			border-top-color: $active;
+			border-right-color: $active;
 			z-index: 3;
+		}
+
+		&:hover {
+			background-color: $active-hover;
+			&::after {
+				border-top-color: $active-hover;
+				border-right-color: $active-hover;
+			}
 		}
 	}
 }
@@ -44,5 +62,13 @@
 .main {
 	flex-grow: 1;
 	min-height: 100%;
-	background-color: darkmagenta;
+	background-color: $active;
+	padding-left: 5vw;
+	transition: background-color 0.4s;
+	border-radius: 0 1.5rem 1.5rem 0;
+	overflow: hidden;
+
+	&.active {
+		background-color: $active-hover;
+	}
 }

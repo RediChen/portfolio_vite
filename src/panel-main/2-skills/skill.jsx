@@ -1,7 +1,7 @@
 import { TbCodeCircleFilled } from "react-icons/tb";
 import s from './skill.module.scss';
 
-export default function Skill() {
+const Skill = () => {
   const list = [
     [
       '前端基礎',
@@ -48,22 +48,26 @@ export default function Skill() {
   ];
 
   return (
-    <article className="row row-cols-1 row-cols-md-2 row-cols-lg-3 mw-100 m-0">
-      {list.map((arr, i) => (
-        <div key={i} className={["col", s.tile].join(' ')}>
-          <div className={s.membrane}>
-            <h2 className={s.h2}>{arr[0]}</h2>
-            <ul className={s.list}>
-              {arr.slice(1).map((item, j) => (
-                <li key={j} className={s.listItem}>
-                  <i className={s.icon}><TbCodeCircleFilled /></i>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+    <article className={['h-100', s.container].join(' ')}>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 mw-100 h-100 m-0">
+        {list.map((arr, i) => (
+          <div key={i} className={["col", s.tile].join(' ')}>
+            <div className={s.membrane}>
+              <h2 className={s.h2}>{arr[0]}</h2>
+              <ul className={s.list}>
+                {arr.slice(1).map((item, j) => (
+                  <li key={j} className={s.listItem}>
+                    <i className={s.icon}><TbCodeCircleFilled /></i>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </article>
   )
 }
+
+export default Skill;
