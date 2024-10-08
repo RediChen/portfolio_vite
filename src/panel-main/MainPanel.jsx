@@ -1,9 +1,10 @@
+import PropTypes from "prop-types";
 import { useState } from 'react'
 import s from './index.module.scss'
 import Skill from './2-skills/skill';
 import Core from './1-basic/core';
 
-export default function Panel() {
+const Panel = ({ setOpenPortfolio = () => { } }) => {
   const [tabNum, setTabNum] = useState(1);
   const [hoverNum, setHoverNum] = useState(0);
 
@@ -38,7 +39,7 @@ export default function Panel() {
         </div>
         <div className={[s.main, hoverNum === tabNum ? s.active : ''].join(' ')}>
           {tabNum === 1 && (
-            <Core />
+            <Core setOpenPortfolio={(v) => setOpenPortfolio(v)} />
           )}
           {tabNum === 2 && (
             <Skill />
@@ -51,3 +52,9 @@ export default function Panel() {
     </section>
   )
 }
+
+Panel.propTypes = {
+  setOpenPortfolio: PropTypes.func
+}
+
+export default Panel;

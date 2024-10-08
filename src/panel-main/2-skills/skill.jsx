@@ -9,7 +9,15 @@ const Skill = () => {
       'CSS3',
       'SCSS',
       'RWD',
-      'Bootstraps 5 (含客製化)'
+      <>Bootstraps 5<br className="d-lg-none" />(含客製化)</>
+    ],
+    [
+      '後端基礎',
+      'Node.js, Express.js',
+      'RESTful API 的設計與串接',
+      'Bearer token, jwt',
+      '串接第三方 API',
+      '串接綠界金流'
     ],
     [
       'JavaScript',
@@ -25,14 +33,7 @@ const Skill = () => {
       'hooks',
       <>依 design guideline<br />設計系統式的元件</>
     ],
-    [
-      '後端基礎',
-      'Node.js, Express.js',
-      'RESTful API 的設計與串接',
-      'Bearer token, jwt',
-      '串接第三方 API',
-      '串接綠界金流'
-    ],
+
     [
       '資料庫',
       'MySQL / MariaDB',
@@ -48,11 +49,11 @@ const Skill = () => {
   ];
 
   return (
-    <article className={['h-100', s.container].join(' ')}>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 mw-100 h-100 m-0">
+    <article className={s.container}>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 m-0">
         {list.map((arr, i) => (
           <div key={i} className={["col", s.tile].join(' ')}>
-            <div className={s.membrane}>
+            <div className={s.tileBody}>
               <h2 className={s.h2}>{arr[0]}</h2>
               <ul className={s.list}>
                 {arr.slice(1).map((item, j) => (

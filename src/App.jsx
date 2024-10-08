@@ -17,10 +17,10 @@ function App() {
         </button>
       </div>
       <div className={['container-fluid', s.panel, s.panel_1, pnClass].join(' ')}>
-        <MainPanel />
+        <MainPanel setOpenPortfolio={(v) => setOpenPortfolio(v)} />
       </div>
       <div className={['container-fluid', s.panel, s.panel_2, pnClass].join(' ')}>
-        <SecPanel />
+        <SecPanel setOpenPortfolio={(v) => setOpenPortfolio(v)} />
       </div>
     </>
   )
