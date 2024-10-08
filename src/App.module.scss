@@ -7,6 +7,7 @@
 }
 
 .panel {
+	background-color: $bgColor;
 	@extend .fullScreen;
 	transition: transform 0.4s;
 
@@ -16,7 +17,6 @@
 
 .panel_1 {
 	padding: 5rem;
-	background-color: $bgColor;
 	top: 0;
 
 	@include rwd-above("lg") {
@@ -25,19 +25,11 @@
 }
 
 .panel_2 {
-	background-color: rgb(204, 230, 173);
+	padding: 2rem;
 	top: 100%;
 }
 
 .panel_1.openState,
 .panel_2.openState {
 	transform: translateY(-100%);
-}
-
-.switchBtn {
-	position: absolute;
-	bottom: 2rem;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 10;
 }

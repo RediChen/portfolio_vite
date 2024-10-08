@@ -10,11 +10,6 @@ function App() {
   return (
     <>
       <div className={s.fullScreen}>
-        <button
-          className={s.switchBtn}
-          onClick={() => setOpenPortfolio(!openPortfolio)}>
-          作品集 {openPortfolio ? '關閉' : 'OPEN'}
-        </button>
       </div>
       <div className={['container-fluid', s.panel, s.panel_1, pnClass].join(' ')}>
         <MainPanel setOpenPortfolio={(v) => setOpenPortfolio(v)} />
