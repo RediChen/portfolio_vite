@@ -1,6 +1,32 @@
+@import "../../style/index.scss";
+
 .tile {
 	background-color: #f2f2f2;
 	transition: background-color 0.4s, box-shadow 0.4s;
+
+	&:first-child {
+		border-top-right-radius: 12px;
+	}
+	&:last-child {
+		border-bottom-right-radius: 12px;
+	}
+
+	@include rwd-above("md") {
+		&:first-child {
+			border-top-right-radius: 0;
+		}
+		&:nth-child(2) {
+			border-top-right-radius: 12px;
+		}
+	}
+	@include rwd-above("lg") {
+		&:nth-child(2) {
+			border-top-right-radius: 0;
+		}
+		&:nth-child(3) {
+			border-top-right-radius: 12px;
+		}
+	}
 
 	&:hover {
 		background-color: hsl(160, 60%, 95%);
