@@ -21,7 +21,7 @@
 		aspect-ratio: 1;
 	}
 }
-.figure.caption {
+.figure .caption {
 	width: 8rem;
 	border-bottom: 3px solid $normal;
 	position: relative;
@@ -52,6 +52,22 @@
 	gap: 4px;
 	top: 4px;
 }
+
+//*======= github =====
+.ghBtn {
+	background-color: transparent;
+	border: none;
+	font-size: 2rem;
+	color: #111;
+
+	&:hover {
+		color: #333;
+	}
+	&:active {
+		color: #444;
+	}
+}
+//*======= portfolio =====
 
 .portfolioBtn {
 	$l: 8rem;
