@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import s from './index.module.scss'
 import Skill from './2-skills/skill';
+import Core from './1-basic/core';
 
 export default function Panel() {
   const [tabNum, setTabNum] = useState(1);
@@ -37,10 +38,10 @@ export default function Panel() {
         </div>
         <div className={[s.main, hoverNum === tabNum ? s.active : ''].join(' ')}>
           {tabNum === 1 && (
-            <article>11111</article>
+            <Core />
           )}
           {tabNum === 2 && (
-            <Skill hoverNum={hoverNum} />
+            <Skill />
           )}
           {tabNum === 3 && (
             <article>33333</article>
