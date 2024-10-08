@@ -9,7 +9,7 @@ const Core = ({ setOpenPortfolio = () => { } }) => {
       <figure className={s.figure}>
         <div className='img-wrap-w100'>
           <img
-            src="/avatar.jpg"
+            src="/portfolio_vite/avatar.jpg"
             alt="personal avatar"
           />
         </div>

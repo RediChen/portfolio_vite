@@ -45,7 +45,7 @@ const Panel = ({ setOpenPortfolio = () => { } }) => {
             <Skill />
           )}
           {tabNum === 3 && (
-            <article>33333</article>
+            <article></article>
           )}
         </div>
       </div>
