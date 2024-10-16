@@ -32,14 +32,41 @@
 	}
 }
 
+// <div>
 .tile {
-	background-color: #f2f2f2;
-	transition: background-color 0.4s, box-shadow 0.4s;
-	display: grid;
-	place-items: center;
+	background-color: $white;
+	box-shadow: inset 0 0 1rem hsla(160, 0%, 5%, 0.5);
 
-	&:hover {
-		background-color: hsl(160, 60%, 95%);
-		box-shadow: inset 0 0 5rem hsl(160, 60%, 85%);
+	background-size: 120%;
+	background-position: center;
+	transition: background-color 0.4s, box-shadow 0.4s, background-size 0.4s;
+}
+// <a>
+.card {
+	padding-bottom: 5%;
+	height: 100%;
+	backdrop-filter: brightness(0.5) grayscale(0.5);
+	transition: backdrop-filter 0.4s;
+	display: grid;
+	place-items: end center;
+}
+.card h3 {
+	padding: 0.5rem 3rem;
+	border-radius: 99rem;
+	background-color: $white;
+}
+
+.tile:hover {
+	background-size: 130%;
+	background-color: hsl(160, 60%, 95%);
+	box-shadow: inset 0 0 5rem hsl(160, 0%, 85%);
+
+	.card {
+		backdrop-filter: none;
 	}
+}
+
+.backIcon {
+	margin-bottom: 1rem;
+	font-size: 2rem;
 }

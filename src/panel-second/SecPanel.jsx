@@ -3,30 +3,37 @@ import s from './index.module.scss'
 import { IoCaretUpOutline } from "react-icons/io5";
 
 const Panel = ({ setOpenPortfolio = () => { } }) => {
+  const PATH = '/portfolio_vite/public';
   const List = [
     [
       '古法卜卦器',
-      'https://codepen.io/dbyyjxyl/pen/NWmYEPV'
+      'https://codepen.io/dbyyjxyl/pen/NWmYEPV',
+      `${PATH}/web_bugua.png`
     ],
     [
       '井字棋',
-      'https://redichen.github.io/tictactoe_basic/'
+      'https://redichen.github.io/tictactoe_basic/',
+      `${PATH}/web_ooxx.png`
     ],
     [
       'TS 與路由練習',
-      'https://redichen.github.io/web_remake_2Ustyle/'
+      'https://redichen.github.io/web_remake_2Ustyle/',
+      `${PATH}/web_ts.png`
     ],
     [
       '原生 JS 綜合練習',
-      'https://redichen.github.io/multipleJsExercises/'
+      'https://redichen.github.io/multipleJsExercises/',
+      `${PATH}/web_multi.png`
     ],
     [
       '網頁切版練習',
-      'https://redichen.github.io/ninjaMailSlicing/'
+      'https://redichen.github.io/ninjaMailSlicing/',
+      `${PATH}/web_ninja.png`
     ],
     [
-      '網站切版練習',
-      'https://redichen.github.io/WebPrac_SSClinic_redesign/'
+      '網站切版重新設計',
+      'https://redichen.github.io/WebPrac_SSClinic_redesign/',
+      `${PATH}/web_clinic.png`
     ],
   ];
 
@@ -36,11 +43,17 @@ const Panel = ({ setOpenPortfolio = () => { } }) => {
         <main className={['col-12 col-md-10 col-lg-11'].join(' ')}>
           <div className="row h-100">
             {List.map((data) => (
-              <div key={data[0]} className={['col-12 col-md-6 col-lg-4 h-50', s.tile].join(' ')}>
-                <a href={data[1]} target="_blank" rel="noopener noreferrer">
-                  <div className={s.card}>
-                    <h3>{data[0]}</h3>
-                  </div>
+              <div key={data[0]}
+                className={['col-12 col-md-6 col-lg-4 h-50 p-0', s.tile].join(' ')}
+                style={{ backgroundImage: 'url(' + data[2] + ')' }}
+              >
+                <a
+                  href={data[1]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={s.card}
+                >
+                  <h3>{data[0]}</h3>
                 </a>
               </div>
             ))}
@@ -48,7 +61,7 @@ const Panel = ({ setOpenPortfolio = () => { } }) => {
         </main>
         <aside className={['col-12 col-md-2 col-lg-1', s.aside].join(' ')}>
           <button onClick={() => setOpenPortfolio(false)}>
-            <i><IoCaretUpOutline /></i>
+            <i className={s.backIcon}><IoCaretUpOutline /></i>
             返回
           </button>
           <h2>作品集</h2>
