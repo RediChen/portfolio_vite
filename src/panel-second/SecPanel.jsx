@@ -6,32 +6,32 @@ const Panel = ({ setOpenPortfolio = () => { } }) => {
   const PATH = '/portfolio_vite';
   const List = [
     [
-      '古法卜卦器',
+      ['古法卜卦器', 'Bootstrap, JavaScript'],
       'https://codepen.io/dbyyjxyl/full/NWmYEPV',
       `${PATH}/web_bugua.png`
     ],
     [
-      '井字棋',
+      ['井字棋', 'React'],
       'https://redichen.github.io/tictactoe_basic/',
       `${PATH}/web_ooxx.png`
     ],
     [
-      'TS 與路由練習',
+      ['TS 與路由練習', 'Typescript, React Router'],
       'https://redichen.github.io/web_remake_2Ustyle/',
       `${PATH}/web_ts.png`
     ],
     [
-      '原生 JS 綜合練習',
+      ['原生 JS 綜合練習', 'Bootstrap, JavaScript'],
       'https://redichen.github.io/multipleJsExercises/',
       `${PATH}/web_multi.png`
     ],
     [
-      '網頁切版練習',
+      ['網頁切版練習', 'Bootstrap, SCSS'],
       'https://redichen.github.io/ninjaMailSlicing/',
       `${PATH}/web_ninja.png`
     ],
     [
-      '網站切版重新設計',
+      ['網站切版重新設計', 'HTML, SCSS, JavaScript'],
       'https://redichen.github.io/WebPrac_SSClinic_redesign/',
       `${PATH}/web_clinic.png`
     ],
@@ -53,7 +53,8 @@ const Panel = ({ setOpenPortfolio = () => { } }) => {
                   rel="noopener noreferrer"
                   className={s.card}
                 >
-                  <h3>{data[0]}</h3>
+                  <h3>{data[0][0]}</h3>
+                  <h6>{data[0][1]}</h6>
                 </a>
               </div>
             ))}
