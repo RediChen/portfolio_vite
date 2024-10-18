@@ -3,11 +3,11 @@ import s from './index.module.scss'
 import { IoCaretUpOutline } from "react-icons/io5";
 
 const Panel = ({ setOpenPortfolio = () => { } }) => {
-  const PATH = '/portfolio_vite/public';
+  const PATH = '/portfolio_vite';
   const List = [
     [
       '古法卜卦器',
-      'https://codepen.io/dbyyjxyl/pen/NWmYEPV',
+      'https://codepen.io/dbyyjxyl/full/NWmYEPV',
       `${PATH}/web_bugua.png`
     ],
     [
