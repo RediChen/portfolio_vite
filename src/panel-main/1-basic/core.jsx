@@ -23,6 +23,10 @@ const Core = ({ setOpenPortfolio = () => { } }) => {
           <FaGithub />
         </a>
       </figure>
+      <article className={s.intro}>
+        <h3>簡介</h3>
+        <p>從數學老師轉職網頁工程師。注重技術的理解與活用，有足以自學的搜尋與語言能力。熟悉 React 與 Next 框架。</p>
+      </article>
 
       {/* abs pos below */}
       <button className={s.portfolioBtn} onClick={() => setOpenPortfolio(true)}>
